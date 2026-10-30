@@ -1,0 +1,1 @@
+These optimized images were retrieved from the publicly accessible TeddyPups reference site for this local website-recreation assignment. Confirm permission and usage rights before redistributing or deploying them publicly.

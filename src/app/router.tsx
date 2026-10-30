@@ -2,6 +2,9 @@ import { createBrowserRouter } from 'react-router-dom'
 import { App } from './App'
 import { HomePage } from '../pages/HomePage'
 import { NotFoundPage } from '../pages/NotFoundPage'
+import { GoneHomePage } from '../pages/GoneHomePage'
+import { PuppiesPage } from '../pages/PuppiesPage'
+import { PuppyDetailPage } from '../pages/PuppyDetailPage'
 import { ReferencePage } from '../pages/ReferencePage'
 
 export const router = createBrowserRouter([
@@ -10,33 +13,9 @@ export const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <HomePage /> },
-      {
-        path: 'puppies',
-        element: (
-          <ReferencePage
-            title="Available puppies"
-            description="Meet puppies ready to find their families."
-          />
-        ),
-      },
-      {
-        path: 'puppies/:slug',
-        element: (
-          <ReferencePage
-            title="Puppy details"
-            description="Get to know this puppy and the next steps for welcoming them home."
-          />
-        ),
-      },
-      {
-        path: 'gone-home',
-        element: (
-          <ReferencePage
-            title="Gone home"
-            description="Every puppy here has already joined a loving family."
-          />
-        ),
-      },
+      { path: 'puppies', element: <PuppiesPage /> },
+      { path: 'puppies/:slug', element: <PuppyDetailPage /> },
+      { path: 'gone-home', element: <GoneHomePage /> },
       {
         path: 'happy-families',
         element: (

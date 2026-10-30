@@ -44,6 +44,13 @@ Homepage links exposed these puppy detail slugs:
 
 The listing also links to query variants: `/puppies?origin=local`, `/puppies?origin=imported`, and `/puppies?breed=maltipoo|pomeranian|poodle|cavapoo|shih-tzu`. The footer links to `/how-it-works#delivery`. These are discoverable URLs; not every query variant or detail slug was individually opened.
 
+## Listing, Detail, And Archive
+
+- The hydrated `/puppies` page has three filter groups: location (`Everywhere`, `Imported`, `Korean Teacup`), breed (`Maltipoo`, `Pomeranian`, `Poodle`, `Cavapoo`, `Shih Tzu`), and gender (`Boys`, `Girls`). Filters combine in the URL using `origin`, `collection=korean-teacup`, `breed`, and `gender`. There is no visible age filter, sort control, or pagination on the inspected page.
+- At inspection time, `/puppies` showed 15 available puppies. `origin=imported` returned all 15, `origin=local` returned zero, the Korean Teacup collection returned five, `breed=maltipoo` returned six, and adding `gender=female` returned four. An unrecognized breed showed a zero-result message and a WhatsApp action.
+- The page previews five Gone Home cards below the available list. `/gone-home` contains 27 distinct archive entries and labels them as already home; archived records are separate from active listings.
+- A Max detail profile was opened through the listing. It presents breed, gender, age, origin, a two-item photo/video gallery, WhatsApp and enquiry actions, a journey section, and a health-claim section. The health claims are verified text on the reference but are intentionally omitted from this implementation to avoid repeating unverified medical claims. Both still photos are stored locally; the reference video is not reproduced.
+
 ## Verified Layout And Behavior
 
 - Header brand is TeddyPups. Desktop navigation exposes Home, Puppies, Happy families, How it works, FAQ, and Visit & contact. At 390px the Menu control opens a full-screen menu with those same links and a Close control. The menu can be opened; Escape and close-button behavior were not tested on the reference.

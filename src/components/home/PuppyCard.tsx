@@ -8,9 +8,11 @@ interface PuppyCardProps {
 }
 
 export function PuppyCard({ puppy }: PuppyCardProps) {
+  const isGoneHome = puppy.status === 'gone-home'
+
   return (
-    <li className="puppy-card">
-      <Link aria-label={`${puppy.name}, ${puppy.breed}, ${puppy.details}. Available`} to={`/puppies/${puppy.slug}`}>
+    <li className={`puppy-card${isGoneHome ? ' puppy-card--gone-home' : ''}`}>
+      <Link aria-label={`${puppy.name}, ${puppy.details}, ${isGoneHome ? 'gone home' : 'available'}`} to={`/puppies/${puppy.slug}`}>
         <div className="puppy-card__image-wrap">
           <ImageWithFallback
             alt={puppy.alt}
@@ -25,11 +27,14 @@ export function PuppyCard({ puppy }: PuppyCardProps) {
               <CirclePlay aria-hidden="true" size={21} />
             </span>
           )}
-          <span className="puppy-card__status">Available</span>
+          <span className="puppy-card__status">
+            {isGoneHome ? 'Gone home' : 'Available'}
+          </span>
         </div>
         <div className="puppy-card__copy">
           <h3>{puppy.name}</h3>
           <p>{puppy.details}</p>
+          {isGoneHome && <span className="puppy-card__archive-label">One ticket home</span>}
         </div>
       </Link>
     </li>

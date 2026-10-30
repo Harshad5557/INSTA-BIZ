@@ -8,12 +8,22 @@ export interface NavigationItem {
 }
 
 export interface Puppy {
+  id: string
   slug: string
   name: string
   breed: string
   details: string
   image: string
+  gallery: string[]
   alt: string
+  status: 'available' | 'gone-home'
+  gender: 'male' | 'female' | 'both'
+  age?: string
+  origin?: 'imported' | 'local'
+  collection?: 'korean-teacup'
+  filterBreeds?: string[]
+  storyLocation?: 'TeddyPups' | 'Dubai showroom'
+  description?: string
   hasVideo?: boolean
 }
 

@@ -1,44 +1,29 @@
-# React + TypeScript + Vite
+# TeddyPups U.A.E.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React, TypeScript, Vite, and React Router recreation of the TeddyPups website.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Requires Node.js 20.19+ or 22.12+ and npm.
 
-## React Compiler
+```sh
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Checks
 
-## Expanding the ESLint configuration
+```sh
+npm run lint
+npm run build
+```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Puppy routes
 
-```js
-export default defineConfig([
-  # TeddyPups U.A.E. foundation
+- `/puppies` lists the available-puppy snapshot and the Gone Home preview.
+- `/puppies/:slug` displays available or archived puppy details.
+- `/gone-home` lists the archived puppies.
 
-  React, TypeScript, Vite, and React Router foundation for the TeddyPups website recreation. The verified routes are registered, while page-specific catalogue, detail, gallery, FAQ, and contact content remains for the next implementation phase.
+The listing filters are encoded in query parameters: `origin`, `collection=korean-teacup`, `breed`, and `gender`. Availability is captured from the reference as of 30 Oct 2026 and should be confirmed with TeddyPups before relying on it.
 
-  ## Requirements
-
-  - Node.js 20.19+ or 22.12+
-  - npm
-
-  ## Setup
-
-  ```sh
-  npm install
-  npm run dev
-  ```
-
-  ## Checks
-
-  ```sh
-  npm run build
-  npm run lint
-  ```
-
-  See [REFERENCE_NOTES.md](REFERENCE_NOTES.md) for verified observations, assumptions, and the discovered route inventory.
-
+See [REFERENCE_NOTES.md](REFERENCE_NOTES.md) for verified reference observations and implementation boundaries. Image provenance is documented in [src/assets/reference/README.md](src/assets/reference/README.md).

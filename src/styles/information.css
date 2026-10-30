@@ -2,6 +2,10 @@
   background: #f5ebdd;
 }
 
+.how-page > .information-hero .information-hero__inner {
+  min-height: clamp(29rem, 55vh, 34rem);
+}
+
 .information-hero__inner {
   min-height: 19rem;
   display: grid;
@@ -11,7 +15,11 @@
   padding-block: var(--space-12);
 }
 
-.information-hero .section-heading__title,
+.information-hero .section-heading__title {
+  font-size: clamp(3.1rem, 9.3vw, 8.375rem);
+  line-height: 0.94;
+}
+
 .information-section .section-heading__title {
   font-size: clamp(2.5rem, 5vw, 4.5rem);
 }

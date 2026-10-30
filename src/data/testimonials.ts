@@ -44,3 +44,32 @@ export const familyGallery: GalleryItem[] = [
     caption: 'Gang of three',
   },
 ]
+
+const familyGalleryAssets = Object.entries(
+  import.meta.glob<string>('../assets/reference/happy-families/family-*.jpg', {
+    eager: true,
+    import: 'default',
+  }),
+).sort(([left], [right]) => left.localeCompare(right))
+
+const verifiedFamilyCaptions: Record<number, string> = {
+  46: 'Lulu with her new mummy',
+  47: 'Adorable Maltipoo baby',
+  48: 'My new teddy puppy',
+  49: 'Our new puppies',
+  50: 'New puppy',
+  51: 'Gang of three',
+  52: 'So happy',
+  59: 'New pup',
+}
+
+export const fullFamilyGallery: GalleryItem[] = familyGalleryAssets.map(([path, image], index) => {
+  const photoNumber = Number(path.match(/family-(\d+)\.jpg$/)?.[1] ?? index + 1)
+  const caption = verifiedFamilyCaptions[photoNumber] ?? `Family photo ${photoNumber}`
+
+  return {
+    image,
+    alt: `TeddyPups family photo ${photoNumber}`,
+    caption,
+  }
+})

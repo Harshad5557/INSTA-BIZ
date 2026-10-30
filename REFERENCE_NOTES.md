@@ -51,6 +51,13 @@ The listing also links to query variants: `/puppies?origin=local`, `/puppies?ori
 - The page previews five Gone Home cards below the available list. `/gone-home` contains 27 distinct archive entries and labels them as already home; archived records are separate from active listings.
 - A Max detail profile was opened through the listing. It presents breed, gender, age, origin, a two-item photo/video gallery, WhatsApp and enquiry actions, a journey section, and a health-claim section. The health claims are verified text on the reference but are intentionally omitted from this implementation to avoid repeating unverified medical claims. Both still photos are stored locally; the reference video is not reproduced.
 
+## Remaining Pages
+
+- `/how-it-works` uses two keyboard-selectable tabs: In Dubai and Imported. Each has four ordered steps. The page also includes the three puppy-promise items, four delivery/collection notes, the three Why choose us items, and the final quality section. The copy is transcribed from the live reference; no additional policies were added.
+- `/faq` contains nine static question/answer pairs. The reference uses definition-list content rather than an accordion, so the clone preserves the static presentation.
+- `/happy-families` contains the reference's 64 gallery photos. Eight gallery captions are available in the reference markup; other items are identified with neutral numbered captions rather than invented customer names or endorsements.
+- `/contact` mirrors the name, phone, optional email/area/puppy/message fields and showroom details. The reference page exposes no form action or method, so the clone does not submit data or claim success. After valid local validation it reports that nothing was sent and presents the verified WhatsApp/email links. No fake loading state is shown because no async request occurs.
+
 ## Verified Layout And Behavior
 
 - Header brand is TeddyPups. Desktop navigation exposes Home, Puppies, Happy families, How it works, FAQ, and Visit & contact. At 390px the Menu control opens a full-screen menu with those same links and a Close control. The menu can be opened; Escape and close-button behavior were not tested on the reference.

@@ -5,7 +5,10 @@ import { NotFoundPage } from '../pages/NotFoundPage'
 import { GoneHomePage } from '../pages/GoneHomePage'
 import { PuppiesPage } from '../pages/PuppiesPage'
 import { PuppyDetailPage } from '../pages/PuppyDetailPage'
-import { ReferencePage } from '../pages/ReferencePage'
+import { HowItWorksPage } from '../pages/HowItWorksPage'
+import { FAQPage } from '../pages/FAQPage'
+import { HappyFamiliesPage } from '../pages/HappyFamiliesPage'
+import { ContactPage } from '../pages/ContactPage'
 
 export const router = createBrowserRouter([
   {
@@ -16,42 +19,10 @@ export const router = createBrowserRouter([
       { path: 'puppies', element: <PuppiesPage /> },
       { path: 'puppies/:slug', element: <PuppyDetailPage /> },
       { path: 'gone-home', element: <GoneHomePage /> },
-      {
-        path: 'happy-families',
-        element: (
-          <ReferencePage
-            title="Happy families"
-            description="Moments shared by families who welcomed a Teddy Pup."
-          />
-        ),
-      },
-      {
-        path: 'how-it-works',
-        element: (
-          <ReferencePage
-            title="How it works"
-            description="A clear, caring path from finding your puppy to welcoming them home."
-          />
-        ),
-      },
-      {
-        path: 'faq',
-        element: (
-          <ReferencePage
-            title="Questions & answers"
-            description="Answers to the questions families ask most."
-          />
-        ),
-      },
-      {
-        path: 'contact',
-        element: (
-          <ReferencePage
-            title="Visit & contact"
-            description="Have a question? The TeddyPups team would love to hear from you."
-          />
-        ),
-      },
+      { path: 'happy-families', element: <HappyFamiliesPage /> },
+      { path: 'how-it-works', element: <HowItWorksPage /> },
+      { path: 'faq', element: <FAQPage /> },
+      { path: 'contact', element: <ContactPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },

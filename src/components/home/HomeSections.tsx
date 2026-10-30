@@ -215,7 +215,7 @@ export function FAQSection() {
           </Link>
         </div>
         <dl className="faq-list">
-          {faqs.map((faq) => (
+          {faqs.slice(0, 3).map((faq) => (
             <div className="faq-list__item" key={faq.question}>
               <dt>{faq.question}</dt>
               <dd>{faq.answer}</dd>

@@ -49,3 +49,20 @@ export interface TrustPoint {
   description: string
   icon: 'health' | 'travel' | 'support' | 'families'
 }
+
+export interface JourneyPath {
+  id: 'local' | 'imported'
+  label: string
+  sublabel: string
+  title: string
+  description: string
+  image: string
+  imageAlt: string
+  imageLabel: string
+  steps: ProcessStepData[]
+}
+
+export interface ContentPoint {
+  title: string
+  description: string
+}

@@ -1,0 +1,33 @@
+@media (hover: hover) and (pointer: fine) {
+  html[data-custom-cursor='enabled'] .site-shell {
+    cursor: url('/cursor/paw.svg') 9 6, auto;
+  }
+
+  html[data-custom-cursor='enabled'] .site-shell :is(
+      a[href],
+      button:not(:disabled),
+      [role='button'],
+      select,
+      input[type='button'],
+      input[type='submit'],
+      input[type='reset'],
+      input[type='checkbox'],
+      input[type='radio']
+    ) {
+    cursor: url('/cursor/paw-press.svg') 9 6, pointer;
+  }
+
+  html[data-custom-cursor='enabled'] .site-shell :is(
+      input:not([type]),
+      input[type='text'],
+      input[type='email'],
+      input[type='search'],
+      input[type='tel'],
+      input[type='url'],
+      input[type='password'],
+      textarea,
+      [contenteditable='true']
+    ) {
+    cursor: text;
+  }
+}

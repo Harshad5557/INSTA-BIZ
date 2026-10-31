@@ -1,0 +1,226 @@
+.page-curtain {
+  position: fixed;
+  z-index: 95;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.page-curtain[data-phase='idle'] {
+  visibility: hidden;
+}
+
+.page-curtain[data-phase='idle'] .page-curtain__message,
+.page-curtain[data-phase='idle'] .page-curtain__puppy,
+.page-curtain[data-phase='idle'] .page-curtain__runner,
+.page-curtain[data-phase='idle'] .page-curtain__print {
+  animation: none;
+}
+
+.page-curtain[data-phase='entrance'] .page-curtain__blanket {
+  animation: page-curtain-lift 480ms cubic-bezier(0.65, 0, 0.3, 1) 560ms forwards;
+}
+
+.page-curtain[data-phase='route'] {
+  visibility: visible;
+}
+
+.page-curtain[data-phase='route'] .page-curtain__blanket {
+  animation: page-curtain-route 1150ms cubic-bezier(0.65, 0, 0.3, 1) both;
+}
+
+.page-curtain__blanket {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  overflow: hidden;
+  place-items: center;
+  background:
+    radial-gradient(ellipse at 50% 28%, rgb(255 255 255 / 72%), transparent 58%),
+    linear-gradient(180deg, #fffdf8 0%, #fbf1df 100%);
+  color: var(--color-ink);
+}
+
+.page-curtain__scene {
+  width: min(100% - 2rem, 42rem);
+  display: grid;
+  justify-items: center;
+  gap: clamp(1.25rem, 5vh, 3rem);
+  padding: 2rem 0;
+}
+
+.page-curtain__message {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3.2vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  animation: page-curtain-message 600ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.page-curtain__puppies {
+  position: relative;
+  width: 100%;
+  min-height: clamp(8rem, 25vh, 13rem);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(0.3rem, 2.2vw, 1rem);
+  padding-bottom: 0.5rem;
+}
+
+.page-curtain__puppy {
+  width: clamp(3rem, 12vw, 6.5rem);
+  height: clamp(5.5rem, 20vh, 10.5rem);
+  flex: 0 1 6.5rem;
+  border: 2px solid #2a170e;
+  border-radius: 999px 999px 0.75rem 0.75rem;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateY(1.1rem) scale(0.92);
+  animation: page-curtain-print-in 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.page-curtain__puppy--1 {
+  animation-delay: 160ms;
+}
+
+.page-curtain__puppy--2 {
+  animation-delay: 280ms;
+}
+
+.page-curtain__puppy--3 {
+  animation-delay: 400ms;
+}
+
+.page-curtain__puppy--4 {
+  animation-delay: 520ms;
+}
+
+.page-curtain__puppy--5 {
+  animation-delay: 640ms;
+}
+
+.page-curtain__runner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: clamp(3.2rem, 7vw, 4.5rem);
+  height: clamp(3.2rem, 7vw, 4.5rem);
+  border: 3px solid var(--color-canvas);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgb(42 23 14 / 18%);
+  object-fit: cover;
+  object-position: center 32%;
+  animation: page-curtain-run 1150ms cubic-bezier(0.45, 0, 0.55, 1) both;
+}
+
+.page-curtain__prints {
+  position: absolute;
+  inset: 50% 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  pointer-events: none;
+}
+
+.page-curtain__print {
+  width: 1.25rem;
+  aspect-ratio: 1;
+  background: var(--color-accent);
+  mask: url('/cursor/paw.svg') center / contain no-repeat;
+  opacity: 0;
+  transform: scale(0.3) rotate(-18deg);
+  animation: page-curtain-print 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.page-curtain__print:nth-child(1) {
+  animation-delay: 160ms;
+}
+
+.page-curtain__print:nth-child(2) {
+  animation-delay: 280ms;
+}
+
+.page-curtain__print:nth-child(3) {
+  animation-delay: 400ms;
+}
+
+.page-curtain__print:nth-child(4) {
+  animation-delay: 520ms;
+}
+
+.page-curtain__print:nth-child(5) {
+  animation-delay: 640ms;
+}
+
+@keyframes page-curtain-lift {
+  to {
+    transform: translateY(-102%);
+  }
+}
+
+@keyframes page-curtain-route {
+  0% {
+    transform: translateY(100%);
+    visibility: visible;
+  }
+
+  26%,
+  58% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-102%);
+    visibility: hidden;
+  }
+}
+
+@keyframes page-curtain-message {
+  from {
+    opacity: 0;
+    transform: translateY(0.65rem) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes page-curtain-print-in {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes page-curtain-print {
+  55% {
+    opacity: 0.48;
+    transform: scale(1) rotate(-18deg);
+  }
+
+  100% {
+    opacity: 0.14;
+    transform: scale(1) rotate(-18deg);
+  }
+}
+
+@keyframes page-curtain-run {
+  from {
+    transform: translateX(-120%);
+  }
+
+  to {
+    transform: translateX(calc(min(42rem, 100vw - 2rem) + 60%));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-curtain {
+    display: none;
+  }
+}

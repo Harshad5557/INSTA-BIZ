@@ -25,6 +25,9 @@
 
   --container-width: 82.5rem;
   --header-height: 4.75rem;
+  --hero-puppy-slot-width: clamp(5.5rem, 10vw, 8rem);
+  --hero-puppy-width: clamp(5.5rem, 10vw, 8rem);
+  --hero-puppy-collage-gap: clamp(0.25rem, 1.5vw, 0.75rem);
   --radius-small: 0.25rem;
   --radius-medium: 0.5rem;
   --radius-pill: 999px;

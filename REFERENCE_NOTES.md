@@ -7,7 +7,17 @@ Inspected on 2026-10-30 at [puppy.instabizweb.com](https://puppy.instabizweb.com
 - **Verified:** Directly observed in the live page, its accessibility snapshot, computed styles, or successful route responses.
 - **Assumption:** A reasonable implementation starting point where a value or behavior was not directly verified. Do not treat it as a measured reference fact.
 - The homepage and each top-level route below loaded successfully (HTTP 200). One puppy detail page was opened as a representative detail page; the other individual puppy routes were discovered from homepage links, not opened one by one.
-- Hover, animation timing, keyboard focus styling, sticky-header behavior, and form submission were not inspected. No claims are made about these states.
+- Keyboard focus styling, sticky-header behavior, and form submission were not inspected. No claims are made about these states.
+
+## Cursor And Page Entrance
+
+These observations were made in a desktop browser with a fine pointer:
+
+- The native cursor is replaced by a 32 × 32 px paw image, positioned with hotspot `(9, 6)`. Its burnt-orange fill and dark outline are visible over empty page areas. It tracks immediately; there is no follower, ring, glow, or particle trail.
+- Links, buttons, selectable puppy cards, and their images use a second 32 × 32 px paw image with a dark fill and gold outline. The cursor does not show contextual text or use different card labels. Text inputs and textareas retain the native text-selection cursor.
+- The initial effect is a separate, full-screen decorative puppy curtain, not a cursor entrance or spinner. It includes puppy imagery, the “every puppy is family” caption, animated paw prints, and a running puppy. The curtain begins lifting after about 560 ms and its lift lasts about 480 ms; the runner animation lasts about 1.15 s, with staggered print animations continuing slightly longer.
+- The curtain repeats after refresh. In-page route navigation triggers a related cover/reveal animation (about 300 ms for the cover and 1.15 s for the runner); scrolling alone does not restart it.
+- The observed cursor and curtain states are based on computed styles and rendered DOM, not access to the site’s source code. Touch-pointer behavior was not directly tested.
 
 ## Discovered Routes
 

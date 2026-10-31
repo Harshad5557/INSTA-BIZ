@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import { featuredPuppies } from '../../data/puppies'
 import { whatsappUrl } from '../../data/site'
 import { Container } from '../ui/Container'
-import { buttonClassName } from '../ui/buttonClassName'
 import { ImageWithFallback } from '../ui/ImageWithFallback'
+import { MagneticButton } from '../ui/MagneticButton'
 import { SectionHeading } from '../ui/SectionHeading'
 
 export function HeroSection() {
@@ -25,28 +25,15 @@ export function HeroSection() {
           }
         />
         <div className="home-hero__actions">
-          <Link className={buttonClassName('primary')} to="/puppies">
+          <MagneticButton to="/puppies" variant="primary">
             View available puppies
-          </Link>
-          <a className={buttonClassName('secondary')} href={whatsappUrl} rel="noreferrer" target="_blank">
+          </MagneticButton>
+          <MagneticButton className="hero-whatsapp" href={whatsappUrl} rel="noreferrer" target="_blank" variant="secondary">
             Enquire on WhatsApp
-          </a>
+          </MagneticButton>
         </div>
       </Container>
       <div aria-label="Some of the puppies in our showroom" className="hero-puppy-collage" role="group">
-        <p className="hero-puppy-collage__note">peekaboo!</p>
-        <div aria-hidden="true" className="hero-mascot">
-          <span className="hero-mascot__ear hero-mascot__ear--left" />
-          <span className="hero-mascot__ear hero-mascot__ear--right" />
-          <span className="hero-mascot__face">
-            <span className="hero-mascot__tuft" />
-            <span className="hero-mascot__eye hero-mascot__eye--left" />
-            <span className="hero-mascot__eye hero-mascot__eye--right" />
-            <span className="hero-mascot__muzzle">
-              <span className="hero-mascot__nose" />
-            </span>
-          </span>
-        </div>
         {featuredPuppies.map((puppy, index) => (
           <Link
             aria-label={`Meet ${puppy.name}, ${puppy.breed}`}

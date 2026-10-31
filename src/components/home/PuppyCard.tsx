@@ -12,7 +12,10 @@ export function PuppyCard({ puppy }: PuppyCardProps) {
 
   return (
     <li className={`puppy-card${isGoneHome ? ' puppy-card--gone-home' : ''}`}>
-      <Link aria-label={`${puppy.name}, ${puppy.details}, ${isGoneHome ? 'gone home' : 'available'}`} to={`/puppies/${puppy.slug}`}>
+      <Link
+        aria-label={`${puppy.name}, ${puppy.details}, ${isGoneHome ? 'gone home' : 'available'}`}
+        to={`/puppies/${puppy.slug}`}
+      >
         <div className="puppy-card__image-wrap">
           <ImageWithFallback
             alt={puppy.alt}

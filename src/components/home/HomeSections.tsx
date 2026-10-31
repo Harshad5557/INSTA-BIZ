@@ -10,6 +10,7 @@ import type { TrustPoint } from '../../types'
 import { Container } from '../ui/Container'
 import { buttonClassName } from '../ui/buttonClassName'
 import { ImageWithFallback } from '../ui/ImageWithFallback'
+import { MagneticButton } from '../ui/MagneticButton'
 import { SectionHeading } from '../ui/SectionHeading'
 import { GalleryGrid } from './GalleryGrid'
 import { ProcessStep } from './ProcessStep'
@@ -238,9 +239,9 @@ export function FinalCTASection() {
             title="Ready to meet your new best friend?"
           />
           <div className="final-cta__actions">
-            <a className={buttonClassName('primary')} href={whatsappUrl} rel="noreferrer" target="_blank">
+            <MagneticButton href={whatsappUrl} rel="noreferrer" target="_blank" variant="primary">
               Enquire on WhatsApp
-            </a>
+            </MagneticButton>
             <Link className={buttonClassName('secondary')} to="/contact">
               Visit & contact
             </Link>

@@ -74,11 +74,16 @@ No environment variables are required. The contact form has no backend integrati
 
 ## Deployment
 
-Vercel settings: build command `npm run build`, output directory `dist`. [`vercel.json`](vercel.json) rewrites application routes to `index.html` for React Router deep links.
+Live Website: https://teddypuppy.vercel.app/
 
-- To create an account-owned deployment, authenticate with `npx vercel login`, then run `npx vercel deploy --prod --verify`.
-- An unauthenticated temporary deployment was attempted, but the generated preview returned HTTP 403 and is not a verified live URL.
-- GitHub repository: no remote is configured yet; select the destination before pushing.
+GitHub Repository:
+https://github.com/Harshad5557/INSTA-BIZ
+
+Platform: Vercel
+
+Build Command: npm run build
+
+Output Directory: dist
 
 ## Known Limitations
 

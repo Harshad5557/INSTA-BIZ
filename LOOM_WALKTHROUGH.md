@@ -70,6 +70,9 @@ Representative prompts, paraphrased from the actual task briefs:
 
 ## Submission Links
 
+- Live Website: https://teddypuppy.vercel.app/
+- GitHub Repository: https://github.com/Harshad5557/INSTA-BIZ
+- Video Walkthrough: https://drive.google.com/file/d/1PN0yDv4wmWWlvm6u9IeEzkl66AlY2tSy/view?usp=sharing
 - Live website: pending authenticated Vercel deployment; the anonymous temporary preview returned HTTP 403 and is not suitable to share
 - GitHub repository: pending repository selection/remote
 - Loom recording: not recorded yet
